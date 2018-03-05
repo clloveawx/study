@@ -1,23 +1,21 @@
 /**
  * 队列
  */
-class Queue() {
+class Queue {
 	
-	constructor(){
-		this.dataStore = [];
-		this.enqueue = enqueue;
-		this.dequeue = dequeue;
-		this.front = front;
-		this.back = back;
-		this.toString = toString;
-		this.empty = empty;
+	constructor(array){
+		this.dataStore = array || [];
+		this.head = 0;
+		this.tail = array ? array.length - 1 : 0;
 	}
 	
 	enqueue(element) {
 		this.dataStore.push(element);
+		this.tail++;
 	}
 	
 	dequeue() {
+		this.head++;
 		return this.dataStore.shift();
 	}
 	
@@ -44,6 +42,10 @@ class Queue() {
 		else {
 			return false;
 		}
+	}
+	
+	length() {
+		return this.dataStore.length;
 	}
 }
 
