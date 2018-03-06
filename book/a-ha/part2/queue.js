@@ -3,8 +3,9 @@ const Queue = require('../../../Queue');
 function qq(string){
 	const array = string.split('');
 	const queue = new Queue(array);
+
 	let result = '';
-	while(queue.head < queue.tail + 1){
+	while(queue.head !== queue.tail){
 		result += queue.front();
 		queue.dequeue();
 		queue.enqueue(queue.front());

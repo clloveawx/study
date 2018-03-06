@@ -12,4 +12,19 @@ class Stack {
 	peek() {
 		return this.dataStore[this.top - 1];
 	}
+
+	pop() {
+		--this.top;
+		return this.dataStore.pop();
+	}
+	
+	clear() {
+		this.top = 0;
+	}
+	
+	length() {
+		return this.top;
+	}
 }
+
+module.exports = Stack;

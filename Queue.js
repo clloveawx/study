@@ -6,7 +6,7 @@ class Queue {
 	constructor(array){
 		this.dataStore = array || [];
 		this.head = 0;
-		this.tail = array ? array.length - 1 : 0;
+		this.tail = array ? array.length : 0;   //队尾指向最后一个元素的下一个位置
 	}
 	
 	enqueue(element) {
@@ -15,7 +15,7 @@ class Queue {
 	}
 	
 	dequeue() {
-		this.head++;
+		this.tail--;
 		return this.dataStore.shift();
 	}
 	
